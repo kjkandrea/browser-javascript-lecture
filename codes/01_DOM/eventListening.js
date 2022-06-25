@@ -32,10 +32,10 @@ buttonElement.removeEventListener('click', handleClick)
  * click event 가 일어났을때 인풋 값 읽어들이기
  */
 
-const inputElement = document.getElementById('your-name')
+const inputElement = document.getElementById('work')
 
 function handleClick2 () {
-  console.log('Your name : ', inputElement.value)
+  console.log('Today work : ', inputElement.value)
 }
 
 buttonElement.addEventListener('click', handleClick2)
