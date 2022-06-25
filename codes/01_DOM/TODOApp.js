@@ -22,6 +22,14 @@ function createTodoItem (work) {
   const todoItem = document.createElement('li')
   todoItem.textContent = work
   todoListElement.append(todoItem)
+
+  bindClickSelfRemoveEvent(todoItem)
+}
+
+function bindClickSelfRemoveEvent(element) {
+  element.addEventListener('click', function () {
+    element.remove()
+  })
 }
 
 window.addEventListener('DOMContentLoaded', main)
