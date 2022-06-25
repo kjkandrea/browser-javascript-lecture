@@ -37,3 +37,17 @@ fruits.forEach(function (fruit) {
 })
 
 document.body.append(ulElement)
+
+/**
+ * 5.
+ * paragraph 제거
+ */
+
+paragraph.remove()
+
+/**
+ * 6.
+ * ulElement 의 첫번째 요소 제거
+ */
+
+ulElement.children[0].remove()
