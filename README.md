@@ -117,7 +117,29 @@ document.querySelector('h1').textContent // "Hello, World!"
 
 ### 생성된 Element 문서내에 추가하기
 
-### 이벤트 리스너
+### 이벤트 타겟 (EventTarget)
+
+이벤트(event) 는 무언가 일어났다는 신호이다.
+이벤트 타겟은 이러한 이벤트의 발생을 감지할 수 있는 인터페이스이다.
+DOM 의 노드들은 `EventTarget` 인터페이스를 지니고 있다. 
+
+```js
+document instanceof EventTarget // true
+document.body instanceof EventTarget // true 
+```
+
+EventTarget 의 인터페이스는 다음과 같다.
+
+```ts
+// lib.dom.d.ts
+interface EventTarget {
+    addEventListener(type: string, callback: EventListenerOrEventListenerObject | null, options?: AddEventListenerOptions | boolean): void;
+    dispatchEvent(event: Event): boolean;
+    removeEventListener(type: string, callback: EventListenerOrEventListenerObject | null, options?: EventListenerOptions | boolean): void;
+}
+```
+
+따라서 `HTMLElement.prototype.addEventListener` 를 통해 감지하고 싶은 이벤트를 할당할 수 있다.
 
 ### 동적인 문서 제어 : input - click - append
 
