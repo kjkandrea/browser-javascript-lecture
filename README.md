@@ -61,6 +61,7 @@ document // #document
 document.nodeType === Node.DOCUMENT_NODE // true
 ```
 
+
 * DOM Tree 의 최상위에 존재하는 유일한 루트 요소 이다.
 * DOM Tree 내의 하위 요소들에 접근하기 위한 진입점 역할을 한다.
 
@@ -79,6 +80,32 @@ document.body.children // HTMLCollection [..]
 
 * HTML 요소를 가리키는 객체이다.
 * 요소 간의 부모, 자식 관계를 가진다. 이러한 계층 구조를 통해 문서의 구조를 표현한다.
+
+#### 속성 노드 (Attribute node)
+
+```js
+document.body.attributes // NamedNodeMap
+document.body.attributes[0].nodeType === Node.ATTRIBUTE_NODE // true
+
+document.body.id = 'html-body'
+document.body.attributes.id // id="html-body"
+```
+
+* 요소 노드의 속성을 가리키는 객체이다. 
+* 속성을 변경하려면 속성 노드의 부모 노드인 요소 노드를 통해 접근하여야 한다.
+
+#### 텍스트 노드 (Text Node)
+
+```js
+document.querySelector('h1').childNodes[0] // text
+document.querySelector('h1').childNodes[0].nodeType === Node.TEXT_NODE
+
+document.querySelector('h1').textContent // "Hello, World!"
+```
+
+* 요소 노드의 텍스트를 가르키는 객체이다.
+* 텍스트를 변경하려면 텍스트 노드의 부모 노드인 요소 노드를 통해 접근하여야 한다.
+* 자식 노드를 가질 수 없는 Leaf Node 이다.
 
 ### 요소 (Element Node) 취득
 
