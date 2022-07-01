@@ -44,7 +44,7 @@ HTML 문서를 브라우저 렌더링 엔진이 파싱하여 DOM Tree 를 생성
 
 ![tree.png](./images/tree.png)
 
-h1 에 접근하고자 할 경우 `Element.children` API 를 통해 다음과 같이 접근할 수 있다.
+h1 에 접근하고자 할 경우 `Element.children` API 를 통해 다음과 같이 자식 요소들의 순서에 따라 headline 요소에 접근할 수 있다.
 
 ```js
 document.children[0].children[1].children[0] // <h1>Hello, world!</h1>
