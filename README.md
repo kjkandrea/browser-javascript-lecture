@@ -50,9 +50,37 @@ h1 에 접근하고자 할 경우 `Element.children` API 를 통해 다음과 �
 document.children[0].children[1].children[0] // <h1>Hello, world!</h1>
 ```
 
-### DOM 의 세부 노드
+### DOM 의 노드 타입
 
-### 요소(Element Node) 취득
+DOM 을 구성하는 대표적인 노드 타입은 다음과 같다.
+
+#### 문서 노드 (Document Node)
+
+```js
+document // #document
+document.nodeType === Node.DOCUMENT_NODE // true
+```
+
+* DOM Tree 의 최상위에 존재하는 유일한 루트 요소 이다.
+* DOM Tree 내의 하위 요소들에 접근하기 위한 진입점 역할을 한다.
+
+#### 요소 노드 (Element Node)
+
+```js
+document.body // <body>..</body>
+document.body.nodeType === Node.ELEMENT_NODE //true
+
+// 부모 요소에 접근
+document.body.parentElement // <html>..</html>
+
+// 자식 요소에 접근
+document.body.children // HTMLCollection [..]
+```
+
+* HTML 요소를 가리키는 객체이다.
+* 요소 간의 부모, 자식 관계를 가진다. 이러한 계층 구조를 통해 문서의 구조를 표현한다.
+
+### 요소 (Element Node) 취득
 
 
 
