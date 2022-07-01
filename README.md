@@ -109,13 +109,20 @@ document.querySelector('h1').textContent // "Hello, World!"
 
 ### 요소 (Element Node) 취득
 
+요소를 읽거나, 수정하기 위해서는 먼저 요소를 취득할 필요가 있다.
+가령 아이디 속성을 가진 요소를 취득하고자 한다면 `document.getElementById` 메서드를 사용할 수 있다.
 
+```js
+document.getElementById('hello') // <h1 id="hello">Hello, world!</h1>
+```
 
-### Element Node 내의 하위 Node 취득
+### 요소 생성
 
-### Element 생성
+```js
+document.createElement('h2') // <h2></h2>
+```
 
-### 생성된 Element 문서내에 추가하기
+### 생성된 요소를 문서내에 추가하기
 
 ### 이벤트 타겟 (EventTarget)
 
