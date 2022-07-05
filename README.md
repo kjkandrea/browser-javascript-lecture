@@ -281,11 +281,19 @@ fetch(REQUEST_URL + '/todos/unknown', { // 의도적으로 유효하지 않은 �
   then(response => {
     if (!response.ok) {
       // response.ok 가 아닌 경우 에러를 던진다.
-      throw new Error(response.status + '. ' + response.statusText)
+      const error = new Error()
+      error.status = response.status
+      error.message = response.status + '. ' + response.statusText
+      throw error
     }
     return response
   }).
   catch(error => {
-    alert(error.message) // alert : 404. Not Found
+    if (error.status === 404) {
+      alert(error.message) // alert : 404. Not Found
+      return;
+    }
+    
+    throw new Error(error)
   })
 ```
